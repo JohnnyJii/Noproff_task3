@@ -1,4 +1,4 @@
-package main.heros;
+package main.heroes;
 
 public class HeroTypeMaker {
     public HeroType getType(String type) {

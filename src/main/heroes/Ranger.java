@@ -1,8 +1,8 @@
-package main.heros;
+package main.heroes;
 
 public class Ranger implements HeroType {
     @Override
     public String play() {
-        return "Wanna be a Ranger";
+        return "Rangers lead the way";
     }
 }

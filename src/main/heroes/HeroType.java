@@ -1,4 +1,4 @@
-package main.heros;
+package main.heroes;
 
 public interface HeroType {
     String play();

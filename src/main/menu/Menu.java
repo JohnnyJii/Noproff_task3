@@ -1,8 +1,7 @@
 package main.menu;
 
 import main.Hero;
-import main.heros.HeroTypeMaker;
-import main.updaters.LevelTechnician;
+import main.heroes.HeroTypeMaker;
 
 import java.util.Scanner;
 
@@ -39,12 +38,12 @@ public class Menu {
                 System.out.println("Invalid selection!");
             }
         }
-            return choice;
+        return choice;
     }
 
     public void mage() {
         HeroTypeMaker mageMaker = new HeroTypeMaker();
-        Hero mageHero = new Hero("NAme2", "species", 150, 10, 90);
+        Hero mageHero = new 1Hero("NAme2", "species", 150, 10, 90);
         System.out.print("\n You chose Mage! \n here are your stats");
         System.out.println(mageHero);
     }

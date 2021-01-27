@@ -3,7 +3,7 @@ package main;
 import java.util.ArrayList;
 import java.util.List;
 import main.updaters.LevelObserver;
-import main.heros.HeroType;
+import main.heroes.HeroType;
 
 public class Hero {
     public int health;
