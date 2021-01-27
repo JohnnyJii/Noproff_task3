@@ -1,4 +1,9 @@
-package main.heros;
+package main;
+
+import java.util.ArrayList;
+import java.util.List;
+import main.updaters.LevelObserver;
+import main.heros.HeroType;
 
 public class Hero {
     public int health;
@@ -11,6 +16,23 @@ public class Hero {
     public double experience;
     public double levelUp;
     public int level;
+    private HeroType type;
+    private List<LevelObserver> levelObservers = new ArrayList<>();
+
+    public void addLevelObserver(LevelObserver levelObserver) {
+        levelObservers.add(levelObserver);
+    }
+
+    public void removeLevelObserver(LevelObserver levelObserver) {
+        levelObservers.remove(levelObserver);
+    }
+
+    public void updateLevelObserver() {
+        for (var levelObserver:levelObservers) {
+            String word = type.play();
+            levelObserver.listen(word);
+        }
+    }
 
     public Hero() {
         this.health = 0;
@@ -33,6 +55,11 @@ public class Hero {
         this.levelUp = levelUp;
         this.level = 1;
         this.experience = 0;
+    }
+
+    public String word() {
+        updateLevelObserver();
+        return type.play();
     }
 
     public String getName() {
