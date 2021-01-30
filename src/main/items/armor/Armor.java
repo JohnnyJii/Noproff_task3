@@ -7,7 +7,7 @@ public class Armor {
     double bodyArmor;
     double legArmor;
 
-    public Armor(String armorName, double headArmor, double bodyArmor, double legArmor){
+    public Armor(String armorName){
         this.armorName = armorName;
     }
 
@@ -28,6 +28,21 @@ public class Armor {
     public void setLegArmor(double legArmor) {
         this.legArmor = legArmor;
         legArmor = 0.6;
+    }
+    public String getArmorName() {
+        return armorName;
+    }
+
+    public double getHeadArmor() {
+        return headArmor;
+    }
+
+    public double getBodyArmor() {
+        return bodyArmor;
+    }
+
+    public double getLegArmor() {
+        return legArmor;
     }
 
 }

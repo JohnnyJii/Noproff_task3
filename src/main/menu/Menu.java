@@ -15,7 +15,13 @@ public class Menu {
         }
     }
 
+    private static void askName() {
+        Scanner sc = new Scanner(System.in);
+        int choice = -1;
 
+        System.out.println("Give name: ");
+        String name = sc.nextLine();
+    }
 
     private void printMenu() {
         System.out.println("\n Who do you want to be?");

@@ -25,9 +25,10 @@ public class Melee extends Weapon {
         damageMelee = 15;
     }
 
-    public void setMeleeStr(int meleeStr) {
+    public void setMeleeStr(int meleeStr, Hero hero) {
         this.meleeStr = meleeStr;
-        meleeStr = (int) (Hero.str() * 1.5);
+        meleeStr = (int) hero.str();
+        double meleeStrength = meleeStr * 1.5;
     }
 
 }

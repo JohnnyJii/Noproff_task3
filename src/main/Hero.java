@@ -1,69 +1,67 @@
 package main;
 
-import java.util.ArrayList;
-import java.util.List;
-import main.updaters.LevelObserver;
+import java.io.Serializable;
 
-abstract public class Hero {
+import main.items.armor.Armor;
+import main.items.weapons.Weapon;
+
+public class Hero implements Serializable {
+    private static Weapon equippedWeapon;
+    private static Armor equippedArmor;
+    String species;
     int hp;
     int str;
     int dex;
-    public static int intel;
-    int mana;
-    String name;
-    String species;
-    double experience;
-    double levelUp;
-    int level;
-    private List<LevelObserver> levelObservers = new ArrayList<>();
+    int intel;
+    static int level;
 
-    public static int intel() {
-        return 0;
-    }
-
-    public static int str() {
-        return 0;
+    public Hero(String species, int heroStr, int str, int level, int dex, int intel, Armor equippedArmor, Weapon equippedWeapon) {
+        this.species = species;
+        this.str = str;
+        this.level = level;
+        this.intel = intel;
+        this.dex = dex;
+        equippedArmor = equippedArmor;
+        equippedWeapon = equippedWeapon;
     }
 
     public static int dex() {
-        return 0;
+        int dex = 0;
+        return dex;
     }
 
-    public void addLevelObserver(LevelObserver levelObserver) {
-        levelObservers.add(levelObserver);
+    public static int intel() {
+        int intel = intel();
+        return intel;
     }
 
-    public void removeLevelObserver(LevelObserver levelObserver) {
-        levelObservers.remove(levelObserver);
+    public Object str() {
+        int str = (int) str();
+        return str;
     }
 
-
-    public Hero(String name) {
-        this.hp = 0;
-        this.str = 0;
-        this.dex = 0;
-        this.intel= 0;
-        this.mana = 0;
-        this.species = "";
-        this.name = "";
-        this.experience = 0.0;
-        this.levelUp = 0.0;
-        this.level = 0;
+    private void setSpecies(String species) {
+        this.species = species;
     }
+
     public String getSpecies() {
         return species;
     }
 
-    public void setSpecies(String species) {
-        this.species = species;
+    public static Weapon getEquippedWeapon() {
+        return equippedWeapon;
     }
 
-    public int getDex() {
-        return dex;
+    public void setEquippedWeapon(Weapon equippedWeapon) {
+        this.equippedWeapon = equippedWeapon;
     }
 
-    public void setDex(int dex) {
-        this.dex = dex;
+    public static Armor getEquippedArmor() {
+        return equippedArmor;
+    }
+
+    public void setEquippedArmor(Armor equippedArmor) {
+        this.equippedArmor = equippedArmor;
     }
 
     public int getHp() {
@@ -74,14 +72,6 @@ abstract public class Hero {
         this.hp = hp;
     }
 
-    public int getIntel() {
-        return intel;
-    }
-
-    public void setIntel(int intel) {
-        this.intel = intel;
-    }
-
     public int getStr() {
         return str;
     }
@@ -90,27 +80,28 @@ abstract public class Hero {
         this.str = str;
     }
 
-    public void gainExperience(double exp) {
-        this.experience += exp;
-        if(this.experience > this.levelUp) {
-            this.gainLevel();
-        }
+    public int getDex() {
+        return dex;
     }
 
-    public double getProgress() {
-        return (this.experience/this.levelUp) * 100.0;
+    public void setDex(int dex) {
+        this.dex = dex;
+        dex = 0;
     }
 
-    public void gainLevel() {
-        this.experience = 0;
-        this.level += 1;
+    public int getIntel() {
+        return intel;
     }
 
-    @Override
-    public String toString() {
-        return "Name: " + this.name + "\n Species: " + this.species +
-                "\n Health: " + this.hp + "\n Mana: " + this.mana +
-                "\n Level: " + this.level + "\n Experience: " + this.experience +
-                "\n Level up: " + this.levelUp;
+    public void setIntel(int intel) {
+        this.intel = intel;
+    }
+
+    public static int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
     }
 }

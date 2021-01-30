@@ -3,26 +3,45 @@ package main.heroes;
 import main.Hero;
 
 public class Ranger extends Hero {
+
     String species;
     int dex;
     int hp;
     int intel;
     int str;
 
-    public Ranger(String species, int dex, int hp, int intel, int str, String name) {
-        super(name);
-        this.species = species;
-        this.dex = dex;
-        this.hp = hp;
-        this.intel = intel;
-        this.str = str;
+    public Ranger(Hero hero) {
+        super(hero.getSpecies(), hero.getStr(), hero.getLevel(),
+                hero.getLevel(), hero.getDex(), hero.getIntel(),
+                Hero.getEquippedArmor(), Hero.getEquippedWeapon());
     }
 
-    @Override
+    //Setters
     public void setSpecies(String species) {
         this.species = species;
         species = "Ranger";
     }
+
+    public String getSpecies() {
+        return species;
+    }
+
+    public int getDex() {
+        return dex;
+    }
+
+    public int getHp() {
+        return hp;
+    }
+
+    public int getIntel() {
+        return intel;
+    }
+
+    public int getStr() {
+        return str;
+    }
+
 
     @Override
     public void setDex(int dex) {
@@ -48,3 +67,4 @@ public class Ranger extends Hero {
         str = 5;
     }
 }
+
