@@ -1,7 +1,6 @@
 package main.menu;
 
 import main.Hero;
-import main.heroes.HeroTypeMaker;
 
 import java.util.Scanner;
 
@@ -42,25 +41,15 @@ public class Menu {
     }
 
     public void mage() {
-        HeroTypeMaker mageMaker = new HeroTypeMaker();
-        Hero mageHero = new Hero("NAme2", "species", 150, 10, 90);
-        System.out.print("\n You chose Mage! \n here are your stats");
-        System.out.println(mageHero);
+
     }
 
     public void ranger() {
-        HeroTypeMaker rangerMaker = new HeroTypeMaker();
-        Hero rangerHero = new Hero(" Name3", "species", 150, 10, 90);
-        System.out.println("\nYou chose Ranger!");
-        System.out.println("here are your stats:");
-        System.out.println(rangerHero);
+
     }
 
     public void warrior() {
-        HeroTypeMaker warriorMaker = new HeroTypeMaker();
-        Hero warriorHero = new Hero("NAme2", "species", 150, 10, 90);
-        System.out.print("\n You chose Warrior! \n here are your stats");
-        System.out.println(warriorHero);
+
     }
 
     private void performAction(int choice) {

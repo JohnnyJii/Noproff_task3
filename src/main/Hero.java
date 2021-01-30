@@ -3,21 +3,31 @@ package main;
 import java.util.ArrayList;
 import java.util.List;
 import main.updaters.LevelObserver;
-import main.heroes.HeroType;
 
-public class Hero {
-    public int health;
-    public int strength;
-    public int dexterity;
-    public int intelligence;
-    public int mana;
-    public String species;
-    public String name;
-    public double experience;
-    public double levelUp;
-    public int level;
-    private HeroType type;
+abstract public class Hero {
+    int hp;
+    int str;
+    int dex;
+    public static int intel;
+    int mana;
+    String name;
+    String species;
+    double experience;
+    double levelUp;
+    int level;
     private List<LevelObserver> levelObservers = new ArrayList<>();
+
+    public static int intel() {
+        return 0;
+    }
+
+    public static int str() {
+        return 0;
+    }
+
+    public static int dex() {
+        return 0;
+    }
 
     public void addLevelObserver(LevelObserver levelObserver) {
         levelObservers.add(levelObserver);
@@ -27,18 +37,12 @@ public class Hero {
         levelObservers.remove(levelObserver);
     }
 
-    public void updateLevelObserver() {
-        for (var levelObserver:levelObservers) {
-            String word = type.play();
-            levelObserver.listen(word);
-        }
-    }
 
-    public Hero() {
-        this.health = 0;
-        this.strength = 0;
-        this.dexterity = 0;
-        this.intelligence = 0;
+    public Hero(String name) {
+        this.hp = 0;
+        this.str = 0;
+        this.dex = 0;
+        this.intel= 0;
         this.mana = 0;
         this.species = "";
         this.name = "";
@@ -46,30 +50,6 @@ public class Hero {
         this.levelUp = 0.0;
         this.level = 0;
     }
-
-    public Hero(String name, String species, int health, int mana, double levelUp) {
-        this.name = name;
-        this.species = species;
-        this.health = health;
-        this.mana = mana;
-        this.levelUp = levelUp;
-        this.level = 1;
-        this.experience = 0;
-    }
-
-    public String word() {
-        updateLevelObserver();
-        return type.play();
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getSpecies() {
         return species;
     }
@@ -78,36 +58,36 @@ public class Hero {
         this.species = species;
     }
 
-    public int getHealth() {
-        return health;
+    public int getDex() {
+        return dex;
     }
 
-    public void setHealth(int health) {
-        this.health = health;
+    public void setDex(int dex) {
+        this.dex = dex;
     }
 
-    public int getMana() {
-        return mana;
+    public int getHp() {
+        return hp;
     }
 
-    public void setMana(int mana) {
-        this.mana = mana;
+    public void setHp(int hp) {
+        this.hp = hp;
     }
 
-    public int getLevel() {
-        return level;
+    public int getIntel() {
+        return intel;
     }
 
-    public void setLevel(int level) {
-        this.level = level;
+    public void setIntel(int intel) {
+        this.intel = intel;
     }
 
-    public double getExperience() {
-        return experience;
+    public int getStr() {
+        return str;
     }
 
-    public void setExperience(double experience) {
-        this.experience = experience;
+    public void setStr(int str) {
+        this.str = str;
     }
 
     public void gainExperience(double exp) {
@@ -129,7 +109,7 @@ public class Hero {
     @Override
     public String toString() {
         return "Name: " + this.name + "\n Species: " + this.species +
-                "\n Health: " + this.health + "\n Mana: " + this.mana +
+                "\n Health: " + this.hp + "\n Mana: " + this.mana +
                 "\n Level: " + this.level + "\n Experience: " + this.experience +
                 "\n Level up: " + this.levelUp;
     }
