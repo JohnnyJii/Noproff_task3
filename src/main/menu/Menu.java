@@ -43,15 +43,16 @@ public class Menu {
 
     public void mage() {
         HeroTypeMaker mageMaker = new HeroTypeMaker();
-        Hero mageHero = new 1Hero("NAme2", "species", 150, 10, 90);
+        Hero mageHero = new Hero("NAme2", "species", 150, 10, 90);
         System.out.print("\n You chose Mage! \n here are your stats");
         System.out.println(mageHero);
     }
 
     public void ranger() {
         HeroTypeMaker rangerMaker = new HeroTypeMaker();
-        Hero rangerHero = new Hero("NAme2", "species", 150, 10, 90);
-        System.out.print("\n You chose Ranger! \n here are your stats");
+        Hero rangerHero = new Hero(" Name3", "species", 150, 10, 90);
+        System.out.println("\nYou chose Ranger!");
+        System.out.println("here are your stats:");
         System.out.println(rangerHero);
     }
 
