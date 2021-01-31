@@ -1,6 +1,6 @@
 package main.items.armor;
 
-public class Leather extends  Armor {
+public class Leather implements Armors {
 
     String leatherArmor;
     int hpLeather;
@@ -11,7 +11,6 @@ public class Leather extends  Armor {
     double legsLeather;
 
     public Leather(String armorName){
-        super(armorName);
         this.leatherArmor = leatherArmor;
         this.hpLeather = hpLeather;
         this.dexLeather = dexLeather;
@@ -36,5 +35,10 @@ public class Leather extends  Armor {
     public void setStrLeather(int strLeather) {
         this.strLeather = strLeather;
         strLeather = 1;
+    }
+
+    @Override
+    public void useArmor() {
+        this.leatherArmor = leatherArmor;
     }
 }

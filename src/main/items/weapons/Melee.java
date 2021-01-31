@@ -2,14 +2,14 @@ package main.items.weapons;
 
 import main.Hero;
 
-public class Melee extends Weapon {
+abstract public class Melee implements Weapons {
 
     String weaponName;
     int damageMelee;
     int meleeStr;
 
     public Melee(String weaponType, String weaponName, int damageMelee, int meleeStr){
-        super(weaponType);
+
         this.weaponName = weaponName;
         this.damageMelee = damageMelee;
         this.meleeStr = meleeStr;
@@ -31,4 +31,8 @@ public class Melee extends Weapon {
         double meleeStrength = meleeStr * 1.5;
     }
 
+    @Override
+    public void useWeapon() {
+
+    }
 }

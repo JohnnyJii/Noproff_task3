@@ -1,6 +1,9 @@
 package main.menu;
 
 import main.Hero;
+import main.heroes.Mage;
+import main.heroes.Ranger;
+import main.heroes.Warrior;
 
 import java.util.Scanner;
 
@@ -36,7 +39,7 @@ public class Menu {
         int choice = -1;
         while (choice < 0 || choice >=5) {
             try {
-                System.out.println("\n Please make a selection: ");
+                System.out.println("Please make a selection: ");
                 choice = Integer.parseInt(sc.nextLine());
             }
             catch (NumberFormatException e) {
@@ -46,16 +49,19 @@ public class Menu {
         return choice;
     }
 
-    public void mage() {
+    public void warrior() {
+        Warrior warrior= new Warrior();
+        warrior.toString();
+    }
 
+    public void mage() {
+        Mage mage= new Mage();
+        mage.toString();
     }
 
     public void ranger() {
-
-    }
-
-    public void warrior() {
-
+        Ranger ranger= new Ranger();
+        ranger.toString();
     }
 
     private void performAction(int choice) {
@@ -65,14 +71,17 @@ public class Menu {
                 System.out.println("See ya!!!");
                 break;
             case 1:
+                System.out.print("basic stats for Warrior are: ");
                 warrior();
                 quit = true;
                 break;
             case 2:
+                System.out.print("Mage basic stats are: ");
                 mage();
                 quit = true;
                 break;
             case 3:
+                System.out.println("Basic stats for Ranger are: ");
                 ranger();
                 quit = true;
                 break;

@@ -1,6 +1,6 @@
 package main.items.armor;
 
-public class Plate extends Armor {
+public class Plate implements Armors {
 
     String plateArmor;
     int hpPlate;
@@ -9,7 +9,6 @@ public class Plate extends Armor {
 
 
     public Plate(String armorName){
-        super(armorName);
         this.plateArmor=plateArmor;
         this.hpPlate=hpPlate;
         this.strPlate=strPlate;
@@ -34,5 +33,10 @@ public class Plate extends Armor {
     public void setDexPlate(int dexPlate) {
         this.dexPlate = dexPlate;
         dexPlate = 1;
+    }
+
+    @Override
+    public void useArmor() {
+        this.plateArmor = plateArmor;
     }
 }

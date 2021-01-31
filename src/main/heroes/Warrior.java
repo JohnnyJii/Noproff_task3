@@ -21,6 +21,14 @@ public class Warrior extends Hero {
 
     }
 
+    @Override
+    public String toString(){
+        return "Species: " + this.species + "\n Dexterity: " + this.dex +
+                "\n Strength: " + this.str + "\n Health points: " + this.hp +
+                "\n Intelligence: " + this.intel;
+    }
+
+
 
     public void setSpecies(String species) {
         this.species = species;
@@ -39,19 +47,16 @@ public class Warrior extends Hero {
     @Override
     public void setHp(int hp) {
         this.hp = hp;
-        hp = 150;
     }
 
     @Override
     public void setIntel(int intel) {
         this.intel = intel;
-        intel = 1;
     }
 
     @Override
     public void setStr(int str) {
         this.str = str;
-        str = 10;
     }
 
     public int getDex() {
@@ -71,21 +76,6 @@ public class Warrior extends Hero {
     public int getStr() {
 
         return str;
-    }
-
-    public int calculateAttack() {
-        if(this.getEquippedWeapon() instanceof Melee) {
-            return this.getDex();
-        } else {
-            return 0;
-        }
-    }
-    public int calculateDefense() {
-        if(this.getEquippedArmor() instanceof Leather) {
-            return this.getDex();
-        } else {
-            return 0;
-        }
     }
 }
 

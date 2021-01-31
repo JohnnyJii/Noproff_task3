@@ -2,14 +2,14 @@ package main.items.weapons;
 
 import main.Hero;
 
-public class Ranged extends Weapon {
+abstract public class Ranged implements Weapons {
 
     String weaponName;
     int rangedDamage;
     int rangedDex;
 
     public Ranged(String weaponType, String weaponName, int rangedDamage, int rangedDex) {
-        super(weaponType);
+
         this.weaponName = weaponName;
         this.rangedDamage = rangedDamage;
         this.rangedDex = rangedDex;
@@ -30,4 +30,8 @@ public class Ranged extends Weapon {
         rangedDex = Hero.dex() * 2;
     }
 
+    @Override
+    public void useWeapon() {
+
+    }
 }

@@ -2,14 +2,13 @@ package main.items.weapons;
 
 import main.Hero;
 
-public class Magic extends Weapon {
+abstract public class Magic implements Weapons {
 
     String weaponName;
     int damageMagic;
     int intelMagic;
 
     public Magic(String weaponType, String weaponName, int damageMagic, int intelMagic) {
-        super(weaponType);
         this.weaponName = weaponName;
         this.damageMagic = damageMagic;
         this.intelMagic = intelMagic;
@@ -28,5 +27,10 @@ public class Magic extends Weapon {
     public void setIntelMagic(int intelMagic) {
         this.intelMagic = intelMagic;
         intelMagic = Hero.intel() * 3;
+    }
+
+    @Override
+    public void useWeapon() {
+
     }
 }

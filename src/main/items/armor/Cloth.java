@@ -1,6 +1,6 @@
 package main.items.armor;
 
-public class Cloth extends Armor {
+public class Cloth implements Armors {
 
     String armorCloth;
     int hpCloth;
@@ -8,7 +8,6 @@ public class Cloth extends Armor {
     int dexCloth;
 
     public Cloth(String armorName){
-        super(armorName);
         this.armorCloth = armorCloth;
         this.hpCloth = hpCloth;
         this.intCloth = intCloth;
@@ -33,5 +32,10 @@ public class Cloth extends Armor {
     public void setDexCloth(int dexCloth) {
         this.dexCloth = dexCloth;
         dexCloth = 1;
+    }
+
+    @Override
+    public void useArmor() {
+        this.armorCloth = armorCloth;
     }
 }

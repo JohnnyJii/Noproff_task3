@@ -1,7 +1,7 @@
 package main;
 
 import java.io.Serializable;
-
+import main.Hero;
 import main.items.armor.Armor;
 import main.items.weapons.Weapon;
 
