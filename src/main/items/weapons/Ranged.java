@@ -1,6 +1,6 @@
 package main.items.weapons;
 
-import main.Hero;
+import main.heroes.Hero;
 
 abstract public class Ranged implements Weapons {
 

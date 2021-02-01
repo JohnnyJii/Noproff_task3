@@ -1,10 +1,9 @@
 package main.heroes;
 
-import main.Hero;
 import main.items.armor.*;
 import main.items.weapons.*;
 
-public class Mage extends Hero {
+public abstract class Mage extends Hero {
 
     Weapon equippedWeapon;
     Armor equippedArmor;
@@ -34,54 +33,6 @@ public class Mage extends Hero {
 
 
 
-    @Override
-    public String getSpecies() {
-        return species;
-    }
-
-    public void setSpecies(String species) {
-        this.species = species;
-    }
-
-    @Override
-    public int getDex() {
-        return dex;
-    }
-
-    @Override
-    public void setDex(int dex) {
-        this.dex = dex;
-    }
-
-    @Override
-    public int getHp() {
-        return hp;
-    }
-
-    @Override
-    public void setHp(int hp) {
-        this.hp = hp;
-    }
-
-    @Override
-    public int getIntel() {
-        return intel;
-    }
-
-    @Override
-    public void setIntel(int intel) {
-        this.intel = intel;
-    }
-
-    @Override
-    public int getStr() {
-        return str;
-    }
-
-    @Override
-    public void setStr(int str) {
-        this.str = str;
-    }
 
     /*
     public int calculateAttack() {

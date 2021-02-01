@@ -1,10 +1,9 @@
 package main.heroes;
 
-import main.Hero;
-import main.items.armor.Armor;
-import main.items.weapons.Weapon;
+import main.items.armor.*;
+import main.items.weapons.*;
 
-public class Ranger extends Hero {
+public abstract class Ranger extends Hero {
 
     Weapon equippedWeapon;
     Armor equippedArmor;
@@ -15,9 +14,14 @@ public class Ranger extends Hero {
     int str;
 
     public Ranger(Hero hero) {
-        super(hero.getSpecies(), hero.getStr(), hero.getLevel(),
-                hero.getLevel(), hero.getDex(), hero.getIntel(),
-                Hero.getEquippedArmor(), Hero.getEquippedWeapon());
+        super(hero.getSpecies(),
+                hero.getStr(),
+                hero.getLevel(),
+                hero.getLevel(),
+                hero.getDex(),
+                hero.getIntel(),
+                Hero.getEquippedArmor(),
+                Hero.getEquippedWeapon());
         String species = "";
         int dex = 0;
         int hp = 0;
@@ -26,12 +30,13 @@ public class Ranger extends Hero {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "Species: " + this.species + "\n Dexterity: " + this.dex +
                 "\n Strength: " + this.str + "\n Health points: " + this.hp +
                 "\n Intelligence: " + this.intel;
     }
-
+}
+/*
     //Setters
     public void setSpecies(String species) {
         this.species = species;
@@ -83,5 +88,5 @@ public class Ranger extends Hero {
         this.str = str;
     }
 }
-
+*/
 

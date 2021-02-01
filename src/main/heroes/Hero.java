@@ -1,43 +1,32 @@
-package main;
+package main.heroes;
 
 import java.io.Serializable;
-import main.Hero;
+
 import main.items.armor.Armor;
 import main.items.weapons.Weapon;
 
-public class Hero implements Serializable {
+public abstract class Hero implements Serializable {
     private static Weapon equippedWeapon;
     private static Armor equippedArmor;
-    String species;
-    int hp;
-    int str;
-    int dex;
-    int intel;
-    static int level;
+    private String species;
+    private static int hp;
+    private static int str;
+    private static int dex;
+    private static int intel;
+    private static int level;
 
-    public Hero(String species, int heroStr, int str, int level, int dex, int intel, Armor equippedArmor, Weapon equippedWeapon) {
+    public Hero(String species, String heroStr, int str, int level, int dex, int intel, Armor equippedArmor, Weapon equippedWeapon) {
         this.species = species;
         this.str = str;
         this.level = level;
         this.intel = intel;
         this.dex = dex;
-        equippedArmor = equippedArmor;
-        equippedWeapon = equippedWeapon;
+        this.equippedArmor = equippedArmor;
+        this.equippedWeapon = equippedWeapon;
     }
 
     public static int dex() {
-        int dex = 0;
         return dex;
-    }
-
-    public static int intel() {
-        int intel = intel();
-        return intel;
-    }
-
-    public Object str() {
-        int str = (int) str();
-        return str;
     }
 
     private void setSpecies(String species) {
@@ -72,9 +61,9 @@ public class Hero implements Serializable {
         this.hp = hp;
     }
 
-    public int getStr() {
+    /*public int getStr() {
         return str;
-    }
+    } */
 
     public void setStr(int str) {
         this.str = str;
@@ -86,10 +75,9 @@ public class Hero implements Serializable {
 
     public void setDex(int dex) {
         this.dex = dex;
-        dex = 0;
     }
 
-    public int getIntel() {
+    public static int getIntel() {
         return intel;
     }
 
@@ -104,4 +92,8 @@ public class Hero implements Serializable {
     public void setLevel(int level) {
         this.level = level;
     }
+
+    protected abstract String getStr();
+
+    public abstract Object str();
 }

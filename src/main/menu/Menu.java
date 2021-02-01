@@ -1,10 +1,6 @@
 package main.menu;
 
-import main.Hero;
-import main.heroes.Mage;
-import main.heroes.Ranger;
-import main.heroes.Warrior;
-
+import main.heroes.*;
 import java.util.Scanner;
 
 public class Menu {
@@ -50,17 +46,47 @@ public class Menu {
     }
 
     public void warrior() {
-        Warrior warrior= new Warrior();
+        Warrior warrior = new Warrior(null) {
+            @Override
+            protected String getStr() {
+                return toString();
+            }
+
+            @Override
+            public Object str() {
+                return null;
+            }
+        };
         warrior.toString();
     }
 
     public void mage() {
-        Mage mage= new Mage();
+        Mage mage = new Mage(null) {
+            @Override
+            protected String getStr() {
+                return null;
+            }
+
+            @Override
+            public Object str() {
+                return null;
+            }
+        };
         mage.toString();
     }
 
     public void ranger() {
-        Ranger ranger= new Ranger();
+        Ranger ranger = new Ranger(null) {
+            @Override
+            protected String getStr() {
+                return null;
+            }
+
+            @Override
+            public Object str() {
+                return null;
+            }
+        };
         ranger.toString();
     }
 
