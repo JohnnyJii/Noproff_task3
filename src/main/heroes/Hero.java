@@ -6,7 +6,7 @@ import java.util.logging.Level;
 import main.items.armor.Armor;
 import main.items.weapons.Weapon;
 
-public abstract class Hero implements Serializable{
+public abstract class Hero {
     private static Weapon equippedWeapon;
     private static Armor equippedArmor;
     private String species;
