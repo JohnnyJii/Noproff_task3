@@ -13,15 +13,8 @@ public abstract class Mage extends Hero {
     int intel;
     int str;
 
-    public Mage(Hero hero) {
-        super(hero.getSpecies(), hero.getStr(), getLevel(),
-                hero.getLevel(), hero.getDex(), hero.getIntel()
-                , hero.getEquippedArmor(), hero.getEquippedWeapon());
-        String species ="";
-        int dex = 0;
-        int hp = 0;
-        int intel = 0;
-        int str = 0;
+    public Mage(String species, Armor equippedArmor, Weapon equippedWeapon) {
+        super(species, equippedArmor, equippedWeapon);
     }
 
     @Override

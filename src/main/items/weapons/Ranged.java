@@ -2,7 +2,7 @@ package main.items.weapons;
 
 import main.heroes.Hero;
 
-abstract public class Ranged implements Weapons {
+public class Ranged implements Weapons {
 
     String weaponName;
     int rangedDamage;
@@ -27,7 +27,7 @@ abstract public class Ranged implements Weapons {
 
     public void setRangedDex(int rangedDex) {
         this.rangedDex = rangedDex;
-        rangedDex = Hero.dex() * 2;
+
     }
 
     @Override

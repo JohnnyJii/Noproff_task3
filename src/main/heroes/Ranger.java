@@ -13,20 +13,9 @@ public abstract class Ranger extends Hero {
     int intel;
     int str;
 
-    public Ranger(Hero hero) {
-        super(hero.getSpecies(),
-                hero.getStr(),
-                hero.getLevel(),
-                hero.getLevel(),
-                hero.getDex(),
-                hero.getIntel(),
-                Hero.getEquippedArmor(),
-                Hero.getEquippedWeapon());
-        String species = "";
-        int dex = 0;
-        int hp = 0;
-        int intel = 0;
-        int str = 0;
+    public Ranger(String species, Armor equippedArmor, Weapon equippedWeapon) {
+        super(species, equippedArmor, equippedWeapon);
+
     }
 
     @Override

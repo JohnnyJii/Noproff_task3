@@ -1,6 +1,6 @@
 package main.items.weapons;
 
-public class Weapon {
+public  abstract class Weapon {
     String weaponType;
 
     public Weapon(String weaponType){

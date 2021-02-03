@@ -3,33 +3,24 @@ package main.heroes;
 import main.items.armor.*;
 import main.items.weapons.*;
 
-public abstract class Warrior extends Hero {
+public class Warrior extends Hero {
+    public final static int WARRIOR_HEALTH = 150;
+    public final static int WARRIOR_STRENGTH = 10;
+    public final static int WARRIOR_DEX = 3;
+    public final static int WARRIOR_INTEL = 1;
 
-    Weapon equippedWeapon;
-    Armor equippedArmor;
-    String species;
-    int dex;
-    int hp;
-    int intel;
-    int str;
+    public final static int WARRIOR_ADD_LEVEL_HP = 30;
+    public final static int WARRIOR_ADD_LEVEL_STR = 5;
+    public final static int WARRIOR_ADD_LEVEL_DEX = 2;
+    public final static int WARRIOR_ADD_LEVEL_INT = 1;
+    public Warrior(String species, Armor equippedArmor, Weapon equippedWeapon) {
+        super(species, equippedArmor, equippedWeapon);
+        this.str = WARRIOR_STRENGTH; //do this to all heroes
+        this.hp = WARRIOR_HEALTH;
+        this.dex = WARRIOR_DEX;
+        this.intel = WARRIOR_INTEL;
+        this.level = 1;
 
-    public Warrior(Hero hero) {
-        super(hero.getSpecies(),
-                hero.getStr(),
-                hero.getLevel(),
-                hero.getLevel(),
-                hero.getDex(),
-                hero.getIntel(),
-                Hero.getEquippedArmor(),
-                Hero.getEquippedWeapon());
-
-    }
-
-    @Override
-    public String toString(){
-        return "Species: " + this.species + "\n Dexterity: " + this.dex +
-                "\n Strength: " + this.str + "\n Health points: " + this.hp +
-                "\n Intelligence: " + this.intel;
     }
 }
 

@@ -1,6 +1,11 @@
 package main.menu;
 
 import main.heroes.*;
+import main.items.armor.Armor;
+import main.items.armor.Plate;
+import main.items.weapons.Melee;
+import main.items.weapons.Weapon;
+
 import java.util.Scanner;
 
 public class Menu {
@@ -38,48 +43,18 @@ public class Menu {
     }
 
     public void warrior() {
-        Warrior warrior = new Warrior() {
-            @Override
-            protected String getStr() {
-                return toString();
-            }
-
-            @Override
-            public Object str() {
-                return null;
-            }
-        };
-        warrior.toString();
+        Armor myArmor  = new Plate("Plate");
+        Weapon myWeapon = new Melee("Sword", "Atlas", 5, 5);
+        Warrior myWarrior = new Warrior("Warrior", myArmor, myWeapon);
+        System.out.println(myWarrior.toString());
     }
 
     public void mage() {
-        Mage mage = new Mage(null) {
-            @Override
-            protected String getStr() {
-                return null;
-            }
 
-            @Override
-            public Object str() {
-                return null;
-            }
-        };
-        mage.toString();
     }
 
     public void ranger() {
-        Ranger ranger = new Ranger(null) {
-            @Override
-            protected String getStr() {
-                return null;
-            }
 
-            @Override
-            public Object str() {
-                return null;
-            }
-        };
-        ranger.toString();
     }
 
     private void performAction(int choice) {

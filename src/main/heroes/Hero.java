@@ -7,26 +7,24 @@ import main.items.armor.Armor;
 import main.items.weapons.Weapon;
 
 public abstract class Hero {
-    private static Weapon equippedWeapon;
-    private static Armor equippedArmor;
-    private String species;
-    private static int hp;
-    private static int str;
-    private static int dex;
-    private static int intel;
-    private static int level;
+    protected Weapon equippedWeapon;
+    protected Armor equippedArmor;
+    protected String species;
+    protected int hp;
 
-    public Hero(String species, String heroStr, int str, int level, int dex, int intel, Armor equippedArmor, Weapon equippedWeapon) {
+
+    protected int str;
+    protected int dex;
+    protected int intel;
+    protected int level;
+
+    public Hero(String species, Armor equippedArmor, Weapon equippedWeapon) {
         this.species = species;
-        this.str = str;
-        this.level = level;
-        this.intel = intel;
-        this.dex = dex;
         this.equippedArmor = equippedArmor;
         this.equippedWeapon = equippedWeapon;
     }
 
-    public static int dex() {
+    public int dex() {
         return dex;
     }
 
@@ -38,7 +36,7 @@ public abstract class Hero {
         return species;
     }
 
-    public static Weapon getEquippedWeapon() {
+    public Weapon getEquippedWeapon() {
         return equippedWeapon;
     }
 
@@ -46,7 +44,7 @@ public abstract class Hero {
         this.equippedWeapon = equippedWeapon;
     }
 
-    public static Armor getEquippedArmor() {
+    public Armor getEquippedArmor() {
         return equippedArmor;
     }
 
@@ -62,10 +60,6 @@ public abstract class Hero {
         this.hp = hp;
     }
 
-    /*public int getStr() {
-        return str;
-    } */
-
     public void setStr(int str) {
         this.str = str;
     }
@@ -78,7 +72,7 @@ public abstract class Hero {
         this.dex = dex;
     }
 
-    public static int getIntel() {
+    public int getIntel() {
         return intel;
     }
 
@@ -86,7 +80,7 @@ public abstract class Hero {
         this.intel = intel;
     }
 
-    public static int getLevel() {
+    public int getLevel() {
         return level;
     }
 
@@ -94,7 +88,15 @@ public abstract class Hero {
         this.level = level;
     }
 
-    protected abstract String getStr();
+    public int getStr() {
+        return str;
+    }
 
-    public abstract Object str();
+
+    public String toString() {
+        return "Species: " + this.species + "\n Dexterity: " + this.dex +
+                "\n Strength: " + this.str + "\n Health points: " + this.hp +
+                "\n Intelligence: " + this.intel;
+    }
+
 }

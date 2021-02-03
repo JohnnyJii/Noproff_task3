@@ -2,7 +2,7 @@ package main.items.armor;
 
 import main.items.weapons.Weapons;
 
-public class Armor {
+public abstract class Armor {
     private Weapons useWeaponType;
 
     public Armor (){

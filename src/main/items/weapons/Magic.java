@@ -2,7 +2,7 @@ package main.items.weapons;
 
 import main.heroes.Hero;
 
-abstract public class Magic implements Weapons {
+public class Magic implements Weapons {
 
     String weaponName;
     int damageMagic;
@@ -26,7 +26,7 @@ abstract public class Magic implements Weapons {
 
     public void setIntelMagic(int intelMagic) {
         this.intelMagic = intelMagic;
-        intelMagic = Hero.getIntel() * 3;
+
     }
 
     @Override
